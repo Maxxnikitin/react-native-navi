@@ -26,6 +26,7 @@ import {
   RootTabScreenProps,
 } from "../types";
 import LinkingConfiguration from "./LinkingConfiguration";
+import { EnterPage } from "../components/enter-page/EnterPage";
 
 export default function Navigation({
   colorScheme,
@@ -53,7 +54,7 @@ function RootNavigator() {
     <Stack.Navigator>
       <Stack.Screen
         name="Root"
-        component={BottomTabNavigator}
+        component={EnterPage}
         options={{ headerShown: false }}
       />
       <Stack.Screen
