@@ -25,6 +25,7 @@ export const Button: FC<IButton> = ({
   disabled = false,
   isLeftIcon = false,
   isRightIcon = false,
+  style,
   ...props
 }) => {
   const [isPressed, setIsPressed] = useState(false);
@@ -52,7 +53,7 @@ export const Button: FC<IButton> = ({
       onPressIn={handlePressIn}
       onPressOut={handlePressOut}
       activeOpacity={1}
-      style={styles.button}
+      style={[styles.button, style]}
       disabled={disabled}
       {...props}
     >
@@ -102,8 +103,8 @@ export const Button: FC<IButton> = ({
 
 const styles = StyleSheet.create({
   button: {
-    marginTop: 90,
     borderRadius: btnBorderRadius,
+    backgroundColor: "red",
   },
   primary: {
     backgroundColor: Colors.light.btnColor,
@@ -140,7 +141,10 @@ const styles = StyleSheet.create({
   secondaryActiveText: {
     color: Colors.light.btnHoverColor,
   },
-  link: {},
+  link: {
+    borderWidth: 1,
+    borderColor: Colors.light.text,
+  },
   linkText: {
     color: Colors.light.text,
   },

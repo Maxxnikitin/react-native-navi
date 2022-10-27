@@ -17,6 +17,7 @@ export default {
     btnDisabledColor: "#F5F5F5",
     btnDisabledTextColor: "#BDBDBD",
     secondaryBtnBorderColor: "#0079C2",
+    textDifficultiesLogging: "#BDDDF2",
   },
   dark: {
     text: "#fff",
