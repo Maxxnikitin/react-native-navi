@@ -33,16 +33,15 @@ export function ButtonText(props: TextProps) {
   return (
     <Text
       {...props}
-      lightColor={Colors[colorScheme].btnText}
-      darkColor={Colors[colorScheme].btnText}
+      lightColor={Colors.light.btnText}
       style={[
-        props.style,
         {
           fontFamily: "roboto-bold",
           fontWeight: "bold",
           fontSize: 18,
           lineHeight: 21,
         },
+        props.style,
       ]}
     />
   );
