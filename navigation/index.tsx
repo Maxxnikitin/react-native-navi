@@ -26,7 +26,7 @@ import {
   RootTabScreenProps,
 } from "../types";
 import LinkingConfiguration from "./LinkingConfiguration";
-import { EnterPage } from "../components/enter-page/EnterPage";
+import { EnterPage } from "../components/enter-page";
 
 export default function Navigation({
   colorScheme,

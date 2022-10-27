@@ -3,8 +3,9 @@ import { Image, StyleSheet } from "react-native";
 import PhoneIcon from "../../assets/icons/PhoneIcon";
 import { EmergencyCallText } from "../StyledText";
 import { Text, View } from "../Themed";
-import { emergencyCallText } from "../../res/values-ru/strings";
+import { emergencyCallText, enterText } from "../../res/values-ru/strings";
 import Logo from "../../assets/icons/Logo";
+import { Button } from "../ui/button";
 
 export const EnterPage: FC = () => {
   return (
@@ -16,6 +17,7 @@ export const EnterPage: FC = () => {
         </EmergencyCallText>
       </View>
       <Logo style={styles.logo} />
+      <Button text={enterText} />
     </View>
   );
 };
