@@ -1,8 +1,6 @@
 const tintColorLight = "#2f95dc";
 const tintColorDark = "#fff";
 
-export const yellowColor = "#FDC634";
-
 export default {
   light: {
     text: "#fff",
@@ -17,7 +15,8 @@ export default {
     btnDisabledColor: "#F5F5F5",
     btnDisabledTextColor: "#BDBDBD",
     secondaryBtnBorderColor: "#0079C2",
-    textDifficultiesLogging: "#BDDDF2",
+    labelText: "#BDDDF2",
+    yellowColor: "#FDC634",
   },
   dark: {
     text: "#fff",
@@ -32,5 +31,7 @@ export default {
     btnDisabledColor: "#F5F5F5",
     btnDisabledTextColor: "#BDBDBD",
     secondaryBtnBorderColor: "#0079C2",
+    labelText: "#BDDDF2",
+    yellowColor: "#FDC634",
   },
 };

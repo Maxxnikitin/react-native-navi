@@ -1,4 +1,4 @@
-import Colors, { yellowColor } from "../constants/Colors";
+import Colors from "../constants/Colors";
 import useColorScheme from "../hooks/useColorScheme";
 import { Text, TextProps } from "./Themed";
 
@@ -19,7 +19,7 @@ export function EmergencyCallText(props: TextProps) {
           fontWeight: "bold",
           fontSize: 18,
           lineHeight: 21,
-          color: yellowColor,
+          color: Colors.light.yellowColor,
           maxWidth: 110,
         },
       ]}
@@ -27,17 +27,37 @@ export function EmergencyCallText(props: TextProps) {
   );
 }
 
-export function ButtonText(props: TextProps) {
+type TPrimaryText = TextProps & {
+  isBold?: boolean;
+};
+
+export function PrimaryText({ isBold = false, ...props }: TPrimaryText) {
   return (
     <Text
       {...props}
-      lightColor={Colors.light.btnText}
       style={[
         {
-          fontFamily: "roboto-bold",
-          fontWeight: "bold",
+          fontFamily: isBold ? "roboto-bold" : "roboto-regular",
+          fontWeight: isBold ? "bold" : "400",
           fontSize: 18,
           lineHeight: 21,
+        },
+        props.style,
+      ]}
+    />
+  );
+}
+
+export function LabelText(props: TextProps) {
+  return (
+    <Text
+      {...props}
+      style={[
+        {
+          fontFamily: "roboto-regular",
+          fontWeight: "400",
+          fontSize: 16,
+          lineHeight: 29,
         },
         props.style,
       ]}
@@ -56,7 +76,7 @@ export function DifficultiesLoggingText(props: TextProps) {
           fontWeight: "400",
           fontSize: 18,
           lineHeight: 21,
-          color: Colors.light.textDifficultiesLogging,
+          color: Colors.light.labelText,
         },
         props.style,
       ]}

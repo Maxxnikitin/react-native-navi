@@ -7,7 +7,7 @@ import {
 } from "react-native";
 import Colors from "../../../constants/Colors";
 import { btnBorderRadius } from "../../../constants/Dimens";
-import { ButtonText } from "../../StyledText";
+import { PrimaryText } from "../../StyledText";
 import { View } from "../../Themed";
 
 interface IButton extends TouchableHighlightProps {
@@ -74,7 +74,7 @@ export const Button: FC<IButton> = ({
             size={21}
           />
         )}
-        <ButtonText
+        <PrimaryText
           style={[
             styles.text,
             styles[`${kind}Text`],
@@ -87,7 +87,7 @@ export const Button: FC<IButton> = ({
           ]}
         >
           {text}
-        </ButtonText>
+        </PrimaryText>
         {isRightIcon && (
           <AntDesign
             style={styles.rightIcon}
