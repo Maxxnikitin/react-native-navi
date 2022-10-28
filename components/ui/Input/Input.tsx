@@ -43,11 +43,11 @@ export const Input: FC<IInput> = ({
         {...props}
       />
       {errorText && (
-        <View>
+        <View style={styles.errorBox}>
           <AntDesign
             color={Colors.light.yellowColor}
             name="pluscircleo"
-            size={21}
+            size={19}
           />
           <LabelText style={styles.error}>{errorText}</LabelText>
         </View>
@@ -74,8 +74,13 @@ const styles = StyleSheet.create({
     lineHeight: 21,
     color: "white",
   },
+  errorBox: {
+    flexDirection: "row",
+    alignItems: "center",
+    marginTop: 8,
+  },
   error: {
     color: Colors.light.yellowColor,
-    marginTop: 8,
+    marginLeft: 5,
   },
 });

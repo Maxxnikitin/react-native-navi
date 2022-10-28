@@ -22,6 +22,9 @@ export type RootStackParamList = {
   NotFound: undefined;
   Enter: undefined;
   Login: undefined;
+  RecoveryPassword: undefined;
+  RecoverySuccessPassword: undefined;
+  RecoveryRejectPassword: undefined;
 };
 
 export type RootStackScreenProps<Screen extends keyof RootStackParamList> =

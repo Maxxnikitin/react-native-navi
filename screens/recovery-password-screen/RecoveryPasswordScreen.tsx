@@ -7,32 +7,34 @@ import { Button } from "../../components/ui/button";
 import { Input } from "../../components/ui/Input";
 import Colors from "../../constants/Colors";
 import {
-  furtherText,
-  isForgotText,
   loginLabelText,
-  loginTitle,
-  passwordLabelText,
+  passwordRecoveryText,
+  passwordRecoveryTitle,
+  sendNewPasswordText,
 } from "../../res/values-ru/strings";
 import { RootStackScreenProps } from "../../types";
 import { makerNavigationCallback } from "../../utils/utils";
 
-export const LoginScreen: FC<RootStackScreenProps<"Login">> = ({
-  navigation,
-}) => {
+export const RecoveryPasswordScreen: FC<
+  RootStackScreenProps<"RecoveryPassword">
+> = ({ navigation }) => {
   return (
     <EnterLayout>
       <View style={styles.content}>
         <PrimaryText style={styles.title} isBold>
-          {loginTitle}
+          {passwordRecoveryTitle}
         </PrimaryText>
-        <Input labelText={loginLabelText} isLogin />
-        <Input labelText={passwordLabelText} secureTextEntry={true} />
-        <Button text={furtherText} isDarkMode isRightIcon />
+        <PrimaryText style={styles.text}>{passwordRecoveryText}</PrimaryText>
+        <Input style={styles.input} labelText={loginLabelText} isLogin />
         <Button
-          style={styles.buttonMargin}
-          text={isForgotText}
-          kind="link"
-          onPress={makerNavigationCallback(navigation, "RecoveryPassword")}
+          style={styles.btn}
+          text={sendNewPasswordText}
+          isDarkMode
+          isRightIcon
+          onPress={makerNavigationCallback(
+            navigation,
+            "RecoveryRejectPassword"
+          )}
         />
       </View>
     </EnterLayout>
@@ -45,7 +47,14 @@ const styles = StyleSheet.create({
     color: Colors.light.text,
     marginBottom: 30,
   },
-  buttonMargin: {
-    marginTop: 30,
+  text: {
+    marginBottom: 30,
+    color: Colors.light.labelText,
+  },
+  btn: {
+    marginTop: 8,
+  },
+  input: {
+    marginBottom: 15,
   },
 });

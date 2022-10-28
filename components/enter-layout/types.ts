@@ -1,3 +1,5 @@
 import { ViewProps } from "../Themed";
 
-export interface IEnterLayout extends ViewProps {}
+export interface IEnterLayout extends ViewProps {
+  withHeader?: boolean;
+}

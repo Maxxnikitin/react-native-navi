@@ -28,6 +28,9 @@ import {
 import LinkingConfiguration from "./LinkingConfiguration";
 import { EnterScreen } from "../screens/enter-screen";
 import { LoginScreen } from "../screens/login-screen";
+import { RecoveryPasswordScreen } from "../screens/recovery-password-screen";
+import { RecoveryPasswordSuccessScreen } from "../screens/recovery-password-success-screen";
+import { RecoveryPasswordRejectScreen } from "../screens/recovery-password-reject-screen";
 
 export default function Navigation({
   colorScheme,
@@ -61,6 +64,21 @@ function RootNavigator() {
       <Stack.Screen
         name="Login"
         component={LoginScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="RecoveryPassword"
+        component={RecoveryPasswordScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="RecoverySuccessPassword"
+        component={RecoveryPasswordSuccessScreen}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="RecoveryRejectPassword"
+        component={RecoveryPasswordRejectScreen}
         options={{ headerShown: false }}
       />
       <Stack.Screen

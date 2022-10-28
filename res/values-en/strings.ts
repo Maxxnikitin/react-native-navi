@@ -15,7 +15,7 @@ export const isForgotText = "Forgot your password?";
 export const passwordRecoveryTitle = "password recovery";
 export const passwordRecoveryText =
   "Enter your phone number or email, we will send you a new password";
-export const sendNewPassword = "Send a new password";
+export const sendNewPasswordText = "Send a new password";
 
 export const successNewPasswordTitle = "A new password has been sent";
 export const successNewPasswordText =

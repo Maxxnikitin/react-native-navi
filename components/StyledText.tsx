@@ -65,6 +65,23 @@ export function LabelText(props: TextProps) {
   );
 }
 
+export function Title(props: TextProps) {
+  return (
+    <Text
+      {...props}
+      style={[
+        {
+          fontFamily: "roboto-regular",
+          fontWeight: "400",
+          fontSize: 24,
+          lineHeight: 28,
+        },
+        props.style,
+      ]}
+    />
+  );
+}
+
 export function DifficultiesLoggingText(props: TextProps) {
   return (
     <Text

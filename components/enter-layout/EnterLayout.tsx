@@ -17,18 +17,24 @@ import {
 import { View } from "../Themed";
 import { IEnterLayout } from "./types";
 
-export const EnterLayout: FC<IEnterLayout> = ({ children, style }) => {
+export const EnterLayout: FC<IEnterLayout> = ({
+  withHeader = true,
+  children,
+  style,
+}) => {
   return (
     <View style={[styles.content, style]}>
-      <TouchableOpacity
-        style={styles.iconBox}
-        onPress={makerPhonePressCallback("911")}
-      >
-        <PhoneIcon />
-        <EmergencyCallText style={styles.iconText}>
-          {emergencyCallText}
-        </EmergencyCallText>
-      </TouchableOpacity>
+      {withHeader && (
+        <TouchableOpacity
+          style={styles.iconBox}
+          onPress={makerPhonePressCallback("911")}
+        >
+          <PhoneIcon />
+          <EmergencyCallText style={styles.iconText}>
+            {emergencyCallText}
+          </EmergencyCallText>
+        </TouchableOpacity>
+      )}
       {children}
       <View style={styles.difficultiesLoggingBox}>
         <DifficultiesLoggingText style={styles.difficultiesLoggingText}>
@@ -54,7 +60,6 @@ export const EnterLayout: FC<IEnterLayout> = ({ children, style }) => {
 const styles = StyleSheet.create({
   content: {
     flex: 1,
-    // justifyContent: "space-between",
     paddingHorizontal: 30,
     paddingTop: 60,
     paddingBottom: 30,
@@ -62,6 +67,7 @@ const styles = StyleSheet.create({
   iconBox: {
     flexDirection: "row",
     alignItems: "center",
+    alignSelf: "flex-start",
     marginBottom: 60,
   },
   iconText: {
@@ -77,6 +83,7 @@ const styles = StyleSheet.create({
   },
   phoneBox: {
     flexDirection: "row",
+    alignItems: "center",
     marginTop: 15,
   },
   phoneIcon: {

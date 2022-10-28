@@ -10,14 +10,11 @@ import Logo from "../../assets/icons/Logo";
 import { Button } from "../../components/ui/button";
 import { RootStackScreenProps } from "../../types";
 import { EnterLayout } from "../../components/enter-layout";
+import { makerNavigationCallback } from "../../utils/utils";
 
 export const EnterScreen: FC<RootStackScreenProps<"Enter">> = ({
   navigation,
 }) => {
-  const handleEnterPress = () => {
-    navigation.push("Login");
-  };
-
   return (
     <EnterLayout>
       <Logo style={styles.logo} />
@@ -27,7 +24,7 @@ export const EnterScreen: FC<RootStackScreenProps<"Enter">> = ({
           text={enterText}
           isRightIcon
           isDarkMode
-          onPress={handleEnterPress}
+          onPress={makerNavigationCallback(navigation, "Login")}
         />
         <Button
           style={styles.btnMarginBottom}
